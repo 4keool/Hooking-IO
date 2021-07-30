@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hooking-IO", "Hooking-IO\Ho
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HookKeyBoard", "HookKeyBoard\HookKeyBoard.vcxproj", "{71A3E676-3C3F-47A9-9A00-38955191E75D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HookMouse", "HookMouse\HookMouse.vcxproj", "{B7502E50-5F2B-41D3-B8F7-6A28C9B02655}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{71A3E676-3C3F-47A9-9A00-38955191E75D}.Release|x64.Build.0 = Release|x64
 		{71A3E676-3C3F-47A9-9A00-38955191E75D}.Release|x86.ActiveCfg = Release|Win32
 		{71A3E676-3C3F-47A9-9A00-38955191E75D}.Release|x86.Build.0 = Release|Win32
+		{B7502E50-5F2B-41D3-B8F7-6A28C9B02655}.Debug|x64.ActiveCfg = Debug|x64
+		{B7502E50-5F2B-41D3-B8F7-6A28C9B02655}.Debug|x64.Build.0 = Debug|x64
+		{B7502E50-5F2B-41D3-B8F7-6A28C9B02655}.Debug|x86.ActiveCfg = Debug|Win32
+		{B7502E50-5F2B-41D3-B8F7-6A28C9B02655}.Debug|x86.Build.0 = Debug|Win32
+		{B7502E50-5F2B-41D3-B8F7-6A28C9B02655}.Release|x64.ActiveCfg = Release|x64
+		{B7502E50-5F2B-41D3-B8F7-6A28C9B02655}.Release|x64.Build.0 = Release|x64
+		{B7502E50-5F2B-41D3-B8F7-6A28C9B02655}.Release|x86.ActiveCfg = Release|Win32
+		{B7502E50-5F2B-41D3-B8F7-6A28C9B02655}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
