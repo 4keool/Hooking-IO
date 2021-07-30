@@ -3,6 +3,7 @@
 //
 
 #include "stdafx.h"
+#include "Hooking_Define.h"
 #include "Hooking-IO.h"
 #include "Hooking-IODlg.h"
 #include "afxdialogex.h"
@@ -45,6 +46,9 @@ BOOL CHookingIODlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+
+	HMODULE		KeyBoardModule = LoadLibrary(L"HookKeyBoard.dll");
+	HMODULE		MouseModule = LoadLibrary(L"HookMouse.dll");
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }

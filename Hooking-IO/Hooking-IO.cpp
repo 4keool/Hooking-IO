@@ -3,6 +3,7 @@
 //
 
 #include "stdafx.h"
+#include "Hooking_Define.h"
 #include "Hooking-IO.h"
 #include "Hooking-IODlg.h"
 
