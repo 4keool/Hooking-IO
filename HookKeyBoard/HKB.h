@@ -4,19 +4,20 @@ class HKB_CALLBACK
 {
 private:
 	static HKB_CALLBACK* volatile _instance;
-	static std::mutex _mutex;
+	static std::mutex HKB_mutex;
 
 
 
 	HKB_CALLBACK();
 	HKB_CALLBACK(const HKB_CALLBACK& other) {};
 	~HKB_CALLBACK();
+
 public:
 	static HKB_CALLBACK* volatile instance()
 	{
 		if (_instance == nullptr)
 		{
-			std::lock_guard<std::mutex> lock(_mutex);
+			std::lock_guard<std::mutex> lock(HKB_mutex);
 
 			if (_instance == nullptr)
 				_instance = new HKB_CALLBACK();
@@ -35,7 +36,6 @@ public:
 	}
 
 public:
-
 	void finalize()
 	{
 

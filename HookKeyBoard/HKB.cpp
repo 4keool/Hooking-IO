@@ -2,7 +2,7 @@
 
 
 HKB_CALLBACK* volatile HKB_CALLBACK::_instance = nullptr;
-std::mutex HKB_CALLBACK::_mutex;
+std::mutex HKB_CALLBACK::HKB_mutex;
 
 HKB_CALLBACK::HKB_CALLBACK() :_hook(nullptr)
 {

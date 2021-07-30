@@ -2,7 +2,7 @@
 
 
 HM_CALLBACK* volatile HM_CALLBACK::_instance = nullptr;
-std::mutex HM_CALLBACK::_mutex;
+std::mutex HM_CALLBACK::HM_mutex;
 
 HM_CALLBACK::HM_CALLBACK() :_hook(nullptr)
 {

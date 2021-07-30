@@ -5,7 +5,7 @@ class HM_CALLBACK
 {
 private:
 	static HM_CALLBACK* volatile _instance;
-	static std::mutex _mutex;
+	static std::mutex HM_mutex;
 
 	HDC m_hDC;					// 메인 핸들
 	HCURSOR m_hCursor;			// 커서 이미지 담기
@@ -20,12 +20,13 @@ private:
 	HM_CALLBACK();
 	HM_CALLBACK(const HM_CALLBACK& other) {};
 	~HM_CALLBACK();
+
 public:
 	static HM_CALLBACK* volatile instance()
 	{
 		if (_instance == nullptr)
 		{
-			std::lock_guard<std::mutex> lock(_mutex);
+			std::lock_guard<std::mutex> lock(HM_mutex);
 
 			if (_instance == nullptr)
 				_instance = new HM_CALLBACK();
@@ -44,7 +45,6 @@ public:
 	}
 
 public:
-
 	void finalize()
 	{
 
