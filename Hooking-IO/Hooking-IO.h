@@ -25,6 +25,7 @@ public:
 	virtual BOOL InitInstance();
 
 // 구현입니다.
+	HANDLE m_hMutex;
 
 	DECLARE_MESSAGE_MAP()
 };

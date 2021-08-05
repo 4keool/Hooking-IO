@@ -45,6 +45,33 @@ BOOL CHookingIODlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// 큰 아이콘을 설정합니다.
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
+	// HIDE
+	ShowWindow(SW_SHOWMINIMIZED);
+	PostMessage(WM_SHOWWINDOW, FALSE, SW_OTHERUNZOOM);
+
+	// Tray
+	NOTIFYICONDATA		tray;
+	tray.cbSize = sizeof(NOTIFYICONDATA);
+	tray.hWnd = this->m_hWnd;
+	tray.uID = IDR_MAINFRAME;
+	tray.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
+	tray.uCallbackMessage = IDR_MAINFRAME;
+	tray.hIcon = AfxGetApp()->LoadIconW(IDR_MAINFRAME);
+	int length = 128;
+#if(NTDDI_VERSION < NTDDI_WIN2K)
+	length = 64;
+#elif(NTDDI_VERSION >= NTDDI_WIN2K)
+	length = 128;
+#endif
+	wcscpy_s(tray.szTip, length, _T("HOOKING"));
+	Shell_NotifyIcon(NIM_ADD, &tray);
+
+	if (m_pMenu == NULL)
+	{
+		m_pMenu = new CMenu;
+		m_pMenu->LoadMenu(IDR_MENU1);
+	}
+
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
 
 	HMODULE		KeyBoardModule = LoadLibrary(L"HookKeyBoard.dll");
